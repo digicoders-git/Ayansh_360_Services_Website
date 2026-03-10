@@ -81,16 +81,25 @@ const Navbar = () => {
                                     }`}></span>
                             </Link>
                             <div className="relative group">
-                                <button className={`text-sm font-semibold uppercase tracking-wide relative flex items-center gap-2 ${location.pathname === '/pages' ? 'text-[#FFD700]' : 'text-white hover:text-[#FFD700] transition-colors'}`}>
+                                <button className={`text-sm font-semibold uppercase tracking-wide relative flex items-center gap-2 ${location.pathname === '/pages' ? 'text-[#3B82F6]' : 'text-white hover:text-[#3B82F6] transition-colors'}`}>
                                     Pages
                                     <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                                 </button>
-                                <div className="absolute left-0 mt-0 w-48 bg-black/95 border border-white/10 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                                    <Link to="/our-work" className="block px-4 py-3 text-white hover:text-[#FFD700] hover:bg-white/5 text-sm font-semibold uppercase tracking-wide first:rounded-t-lg">
+                                <div className="absolute left-0 mt-0 w-48 bg-black/95 border border-[#3B82F6]/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                    <Link to="/our-work" className="block px-4 py-3 text-white hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 text-sm font-semibold uppercase tracking-wide first:rounded-t-lg">
                                         Our Work
                                     </Link>
-                                    <Link to="/our-clients" className="block px-4 py-3 text-white hover:text-[#FFD700] hover:bg-white/5 text-sm font-semibold uppercase tracking-wide last:rounded-b-lg">
+                                    <Link to="/our-clients" className="block px-4 py-3 text-white hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 text-sm font-semibold uppercase tracking-wide">
                                         Our Clients
+                                    </Link>
+                                    <Link to="/career" className="block px-4 py-3 text-white hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 text-sm font-semibold uppercase tracking-wide">
+                                        Career
+                                    </Link>
+                                    <Link to="/privacy-policy" className="block px-4 py-3 text-white hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 text-sm font-semibold uppercase tracking-wide">
+                                        Privacy Policy
+                                    </Link>
+                                    <Link to="/terms-and-conditions" className="block px-4 py-3 text-white hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 text-sm font-semibold uppercase tracking-wide last:rounded-b-lg">
+                                        Terms & Conditions
                                     </Link>
                                 </div>
                             </div>
@@ -104,9 +113,9 @@ const Navbar = () => {
 
                         {/* Right Section */}
                         <div className="flex items-center gap-4">
-                            <button className="text-white hover:text-[#FFD700] transition-colors hidden md:block p-2 hover:bg-white/5 rounded-lg">
+                            {/* <button className="text-white hover:text-[#FFD700] transition-colors hidden md:block p-2 hover:bg-white/5 rounded-lg">
                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                            </button>
+                            </button> */}
 
                             {/* Burger Menu Button */}
                             <button
@@ -146,6 +155,8 @@ const Navbar = () => {
                                     <span className="text-base font-semibold uppercase tracking-wide py-3 px-4 text-white">Pages</span>
                                     <Link to="/our-work" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Work</Link>
                                     <Link to="/our-clients" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Clients</Link>
+                                    <Link to="/privacy-policy" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Privacy Policy</Link>
+                                    <Link to="/terms-and-conditions" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Terms & Conditions</Link>
                                 </div>
                                 <Link to="/career" className={`text-base font-semibold uppercase tracking-wide py-3 px-4 rounded-lg ${location.pathname === '/career' ? 'text-[#FFD700] bg-[#FFD700]/10' : 'text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors'
                                     }`} onClick={() => setIsMobileMenuOpen(false)}>Career</Link>

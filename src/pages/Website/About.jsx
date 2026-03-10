@@ -2,12 +2,12 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className="bg-white pt-32 pb-20 md:px-30 text-black">
+        <div className="bg-white md:pt-32 pt-20 pb-20 md:px-30 text-black">
             {/* Hero Small */}
             <section className="relative py-20 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                        src="about-hero.jpg"
                         alt="About background"
                         className="w-full h-full object-cover opacity-100"
                     />
@@ -15,16 +15,16 @@ const About = () => {
                 </div>
                 <div className="container text-center relative z-10">
                     <span className="text-[#FFD700] font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">ABOUT <span className="text-[#FFD700]">BUILDARX</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter"> ARYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
                 </div>
             </section>
 
             {/* Content Section */}
-            <section className="py-24">
+            <section className="md:py-24">
                 <div className="container grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="relative">
                         <img
-                            src="https://thumbs.dreamstime.com/b/diverse-group-construction-workers-stacking-hands-isolated-white-44598400.jpg"
+                            src="team.webp"
                             alt="Team"
                             className="w-full h-[500px] object-cover border border-white/10"
                         />
@@ -33,7 +33,7 @@ const About = () => {
                             <span className="text-sm font-bold text-black/60 uppercase tracking-widest">Years of Experience</span>
                         </div>
                     </div>
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-8 px-5">
                         <h2 className="text-3xl md:text-4xl">WE ARE COMMITTED TO <span className="text-primary">QUALITY</span> CONSTRUCTION</h2>
                         <p className="text-text-muted leading-relaxed">
                             Founded in 2008, Buildarx has grown from a small local painting firm into a comprehensive construction and waterproofing service provider. Our mission is to transform spaces with precision and care, ensuring every project meets the highest standards of durability and aesthetic appeal.
@@ -41,7 +41,7 @@ const About = () => {
                         <p className="text-text-muted leading-relaxed">
                             We specialize in residential renovations, commercial painting, and advanced waterproofing solutions. Our team of certified professionals is dedicated to providing innovative solutions that stand the test of time.
                         </p>
-                        <div className="grid grid-cols-2 gap-8 mt-4">
+                        <div className="md:grid md:grid-cols-2 gap-8 mt-4 sm:flex">
                             <div className="flex flex-col gap-2">
                                 <span className=" font-bold flex items-center gap-2">
                                     <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>

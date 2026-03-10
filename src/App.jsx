@@ -11,6 +11,8 @@ import Client from './pages/Website/Client';
 import Career from './pages/Website/Career';
 import Contact from './pages/Website/Contact';
 import Enquiry from './pages/Website/Enquiry';
+import PrivacyPolicy from './pages/Website/PrivacyPolicy';
+import TermsAndConditions from './pages/Website/TermsAndConditions';
 
 // Admin Pages
 import AdminLogin from './pages/Admin/Login';
@@ -32,6 +34,8 @@ function App() {
           <Route path="career" element={<Career />} />
           <Route path="enquiry" element={<Enquiry />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="terms-and-conditions" element={<TermsAndConditions />} />
         </Route>
 
         <Route path="/admin-login" element={<AdminLogin />} />

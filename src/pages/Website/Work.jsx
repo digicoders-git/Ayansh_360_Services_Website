@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 
 const Work = () => {
     const projects = [
-        { title: "Modern Villa Renovation", category: "Construction", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" },
-        { title: "Commercial Building Painting", category: "Painting", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" },
-        { title: "Waterproofing Solutions", category: "Waterproofing", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" },
-        { title: "Residential Interior Painting", category: "Painting", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" },
-        { title: "Industrial Construction", category: "Construction", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" },
-        { title: "Exterior Waterproofing", category: "Waterproofing", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" }
+        { title: "Modern Villa Renovation", category: "Construction", image: "/service-2.jpg" },
+        { title: "Commercial Building Painting", category: "Painting", image: "/service-1.jpg" },
+        { title: "Waterproofing Solutions", category: "Waterproofing", image: "/service-3.jpg" },
+        { title: "Residential Interior Painting", category: "Painting", image: "/service-1.jpg" },
+        { title: "Industrial Construction", category: "Construction", image: "/service-2.jpg" },
+        { title: "Exterior Waterproofing", category: "Waterproofing", image: "/service-3.jpg" }
     ];
 
     return (
@@ -51,7 +51,7 @@ const Work = () => {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
                                     />
                                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all"></div>
                                 </div>

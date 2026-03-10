@@ -3,6 +3,7 @@
 
 @theme {
     --color-primary: #FFD700;
+    --color-secondary: #3B82F6;
     --font-inter: "Inter", sans-serif;
     --font-outfit: "Outfit", sans-serif;
 }
@@ -20,6 +21,10 @@
 
     .animate-fade-in-up {
         animation: fadeInUp 1s ease forwards;
+    }
+
+    .animate-shake {
+        animation: shake 1.5s ease-in-out infinite;
     }
 }
 
@@ -42,6 +47,24 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-10px);
+    }
+    20% {
+        transform: translateX(10px);
+    }
+    30% {
+        transform: translateX(-10px);
+    }
+    40% {
+        transform: translateX(0);
     }
 }
 

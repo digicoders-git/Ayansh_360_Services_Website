@@ -37,7 +37,7 @@ export default function MainLayout() {
           href="https://wa.me/919999452314"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+          className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 animate-shake"
           title="WhatsApp"
         >
           <i className="fab fa-whatsapp text-2xl"></i>
@@ -46,7 +46,7 @@ export default function MainLayout() {
         {/* Call */}
         <a
           href="tel:+919999452314"
-          className="w-14 h-14 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110"
+          className="w-14 h-14 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 animate-shake"
           title="Call"
         >
           <i className="fas fa-phone text-2xl"></i>

@@ -8,7 +8,7 @@ const Contact = () => {
             <section className="relative py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+                        src="contact.png"
                         alt="Contact background"
                         className="w-full h-full object-cover"
                     />
@@ -98,7 +98,7 @@ const Contact = () => {
                     </div>
 
                     {/* Right Side - Form */}
-                    <div className="bg-white p-14 rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/50">
+                    <div className="bg-white md:p-14 p-8 rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/50">
                         <h2 className="text-3xl font-bold text-black mb-4">Send Us Message</h2>
                         <p className="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">Seorem Ipsum is simply dummy text of the printing and typesetting.</p>
 
