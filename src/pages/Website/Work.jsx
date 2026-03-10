@@ -25,7 +25,7 @@ const Work = () => {
                 </div>
                 <div className="container relative z-10">
                     <div className="max-w-2xl">
-                        <span className="text-[#FFD700] font-bold uppercase tracking-[4px] mb-4 block text-sm">OUR PORTFOLIO</span>
+                        <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">OUR PORTFOLIO</span>
                         <h1 className="text-3xl sm:text-4xl md:text-6xl mb-6 leading-tight text-black font-bold">
                             SHOWCASE OF OUR <span className="text-[#FFD700]">WORK</span>
                         </h1>
@@ -40,7 +40,7 @@ const Work = () => {
             <section className="py-16 sm:py-24 md:py-32 bg-white text-black px-4 md:px-8 lg:px-16">
                 <div className="container">
                     <div className="mb-12 md:mb-20">
-                        <span className="text-[#FFD700] font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">COMPLETED PROJECTS</span>
+                        <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">COMPLETED PROJECTS</span>
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">OUR <span className="text-[#FFD700]">PORTFOLIO</span></h2>
                     </div>
 

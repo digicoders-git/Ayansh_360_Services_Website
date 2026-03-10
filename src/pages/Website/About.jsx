@@ -14,7 +14,7 @@ const About = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
                 </div>
                 <div className="container text-center relative z-10">
-                    <span className="text-[#FFD700] font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
+                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
                     <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter"> ARYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
                 </div>
             </section>
@@ -70,7 +70,7 @@ const About = () => {
             {/* Values Section */}
             <section className="py-24 px-5">
                 <div className="container text-center mb-16">
-                    <span className="text-primary font-bold uppercase tracking-[4px] mb-4 block">Core Values</span>
+                    <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block">Core Values</span>
                     <h2 className="text-4xl">WHAT DRIVES US</h2>
                 </div>
                 <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">

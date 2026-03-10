@@ -48,7 +48,7 @@ const Services = () => {
                     <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
                 </div>
                 <div className="container text-center relative z-10">
-                    <span className="text-[#FFD700] font-bold uppercase tracking-[6px] mb-4 block">OUR EXPERTISE</span>
+                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">OUR EXPERTISE</span>
                     <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">SERVICES WE <span className="text-[#FFD700]">PROVIDE</span></h1>
                 </div>
             </section>
