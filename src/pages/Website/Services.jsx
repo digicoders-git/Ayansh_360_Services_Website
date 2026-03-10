@@ -73,12 +73,6 @@ const Services = () => {
                                         Expertise urban design wea together thearea divers wheunknown pnturies.
                                     </p>
                                 </div>
-
-                                <div className="mt-auto">
-                                    <div className="text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-                                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     ))}

@@ -384,12 +384,7 @@ const Home = () => {
                             <p className="text-gray-500 text-sm sm:text-base leading-relaxed mb-10 max-w-sm">
                                 More than 99% customer satisfaction is our success. We take pride in delivering excellence.
                             </p>
-                            {/* <Link to="/contact" className="inline-flex items-center bg-primary text-black font-bold py-4 px-8 rounded-sm hover:bg-black hover:text-white transition-all group uppercase tracking-wider text-sm">
-                                VIEW ALL TESTIMONIALS
-                                <div className="ml-4 w-10 h-10 bg-black/10 group-hover:bg-white/20 flex items-center justify-center rounded-sm">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
-                                </div>
-                            </Link> */}
+                          
                         </div>
 
                         {/* Testimonial Cards (Right) */}

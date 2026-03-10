@@ -66,7 +66,7 @@ const Career = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <Link to={`/enquiry?type=${encodeURIComponent(job.title)}`} className="w-full sm:w-auto bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3 px-6 sm:px-8 uppercase text-xs sm:text-sm tracking-wider transition-all text-center">
+                                <Link to={`/contact?type=${encodeURIComponent(job.title)}`} className="w-full sm:w-auto bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3 px-6 sm:px-8 uppercase text-xs sm:text-sm tracking-wider transition-all text-center">
                                     APPLY NOW
                                 </Link>
                             </div>
