@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
     return (
-        <div className="bg-white text-black min-h-screen pt-32 pb-20">
+        <div className="bg-white text-black min-h-screen pt-28 md:pt-32 pb-20">
             {/* Header */}
             <div className="bg-[#252f48] text-white py-16 px-4 md:px-8 lg:px-16 mb-16">
                 <div className="max-w-4xl mx-auto">

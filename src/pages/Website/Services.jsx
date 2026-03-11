@@ -36,7 +36,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="bg-white pt-32 pb-20 md:px-30 text-black">
+        <div className="bg-white pt-28 md:pt-32 pb-20 md:px-30 text-black">
             {/* Header */}
             <section className="relative bg-[#252f48] py-20 border-b border-black/5 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
                

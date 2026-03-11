@@ -35,7 +35,7 @@ const Enquiry = () => {
   return (
     <div className="bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center px-4 md:px-8 lg:px-16 overflow-hidden pt-20">
+      {/* <section className="relative min-h-screen flex items-center px-4 md:px-8 lg:px-16 overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
@@ -55,7 +55,16 @@ const Enquiry = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+                  {/* Hero Section */}
+            <section className="relative bg-[#252f48] py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
+            
+                <div className="container text-center relative z-10">
+                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">SEND YOUR QUERY</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">ENQUIRY <span className="text-[#FFD700]">FORM</span></h1>
+                </div>
+            </section>
 
       {/* Form Section */}
       <section className="py-16 sm:py-24 md:py-32 bg-white text-black px-4 md:px-8 lg:px-16">
