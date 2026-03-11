@@ -23,9 +23,9 @@ const Navbar = () => {
         <>
             {/* Scroll Progress Bar */}
             <div className="fixed top-0 left-0 h-1 bg-[#FFD700] z-[1001]" style={{ width: `${scrollProgress}%`, transition: 'width 0.1s ease' }}></div>
-            <header className="fixed top-1 left-0 z-[1000] w-full bg-black">
+            <header className="fixed top-1 left-0 z-[1000] w-full bg-[#252f48] border-b border-white">
                 {/* Top Bar */}
-                <div className="bg-gray-900/50 backdrop-blur-sm text-white border-b border-white/10 hidden md:block py-3">
+                <div className="bg-[#252f48]/50 backdrop-blur-sm text-white hidden md:block py-3">
                     <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center text-xs font-medium">
                         <div className="flex gap-6 items-center">
                             <a href="tel:+919999452314" className="flex items-center gap-2 hover:text-[#FFD700] transition-colors">
@@ -48,11 +48,11 @@ const Navbar = () => {
                 </div>
 
                 {/* Main Navbar */}
-                <nav className={`transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md py-4 shadow-2xl border-b border-white/10' : 'bg-black/80 backdrop-blur-sm py-5'}`}>
+                <nav className={`transition-all duration-300 ${isScrolled ? 'bg-[#252f48]/95 backdrop-blur-md py-4 shadow-2xl border-b border-white/10' : 'bg-[#252f48]/80 backdrop-blur-sm py-5'}`}>
                     <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center">
                         {/* Logo */}
                         <Link to="/" className="flex group items-center gap-3">
-                            <img src="/logo.png" alt="Buildarx Logo" className="h-10 w-auto" />
+                            <img src="/logo(1).png" alt="Buildarx Logo" className="h-18 w-auto" />
                             <div className='flex flex-col gap-0.5'>
                                 <span className="text-sm font-bold text-white tracking-wide">ARYANSH 360</span>
                                 <span className="text-[10px] uppercase tracking-[2px] text-[#FFD700] font-semibold">SERVICES</span>
@@ -85,7 +85,7 @@ const Navbar = () => {
                                     Pages
                                     <svg className="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                                 </button>
-                                <div className="absolute left-0 mt-0 w-48 bg-black/95 border border-[#3B82F6]/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <div className="absolute left-0 mt-0 w-48 bg-[#252f48]/95 border border-[#3B82F6]/30 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                     <Link to="/our-work" className="block px-4 py-3 text-white hover:text-[#3B82F6] hover:bg-[#3B82F6]/10 text-sm font-semibold uppercase tracking-wide first:rounded-t-lg">
                                         Our Work
                                     </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
                 {isMobileMenuOpen && (
                     <>
                         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] lg:hidden" onClick={() => setIsMobileMenuOpen(false)}></div>
-                        <div className="fixed top-0 right-0 h-full w-[280px] bg-black z-[1001] flex flex-col p-6 lg:hidden shadow-2xl transform transition-transform duration-300">
+                        <div className="fixed top-0 right-0 h-full w-[280px] bg-[#252f48] z-[1001] flex flex-col p-6 lg:hidden shadow-2xl transform transition-transform duration-300">
                             <button className="self-end text-white p-2 hover:bg-white/10 rounded-lg transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                             </button>
@@ -152,19 +152,19 @@ const Navbar = () => {
                                 <Link to="/services" className={`text-base font-semibold uppercase tracking-wide py-3 px-4 rounded-lg ${location.pathname === '/services' ? 'text-[#FFD700] bg-[#FFD700]/10' : 'text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors'
                                     }`} onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
                                 <div className="flex flex-col gap-1">
-                                    <span className="text-base font-semibold uppercase tracking-wide py-3 px-4 text-white">Pages</span>
-                                    <Link to="/our-work" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Work</Link>
-                                    <Link to="/our-clients" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Clients</Link>
-                                    <Link to="/privacy-policy" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Privacy Policy</Link>
-                                    <Link to="/terms-and-conditions" className="text-base font-semibold uppercase tracking-wide py-2 px-8 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Terms & Conditions</Link>
+                                    {/* <span className="text-base font-semibold uppercase tracking-wide py-3 px-4 text-gray-700">Pages</span> */}
+                                    <Link to="/our-work" className="text-base font-semibold uppercase tracking-wide py-2 px-4 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Work</Link>
+                                    <Link to="/our-clients" className="text-base font-semibold uppercase tracking-wide py-2 px-4 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Our Clients</Link>
+                                    <Link to="/privacy-policy" className="text-base font-semibold uppercase tracking-wide py-2 px-4 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Privacy Policy</Link>
+                                    <Link to="/terms-and-conditions" className="text-base font-semibold uppercase tracking-wide py-2 px-4 rounded-lg text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Terms & Conditions</Link>
                                 </div>
                                 <Link to="/career" className={`text-base font-semibold uppercase tracking-wide py-3 px-4 rounded-lg ${location.pathname === '/career' ? 'text-[#FFD700] bg-[#FFD700]/10' : 'text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors'
                                     }`} onClick={() => setIsMobileMenuOpen(false)}>Career</Link>
                                 <Link to="/contact" className={`text-base font-semibold uppercase tracking-wide py-3 px-4 rounded-lg ${location.pathname === '/contact' ? 'text-[#FFD700] bg-[#FFD700]/10' : 'text-white hover:text-[#FFD700] hover:bg-white/5 transition-colors'
                                     }`} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
                             </div>
-                            <Link to="/contact" className="mt-8 flex items-center justify-center gap-2 bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3.5 px-6 uppercase text-sm tracking-wider transition-all" onClick={() => setIsMobileMenuOpen(false)}>
-                                GET A QUOTE
+                            <Link to="/enquiry" className="mt-8 flex items-center justify-center gap-2 bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3.5 px-6 uppercase text-sm tracking-wider transition-all" onClick={() => setIsMobileMenuOpen(false)}>
+                                ENQUIRY
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                             </Link>
                         </div>

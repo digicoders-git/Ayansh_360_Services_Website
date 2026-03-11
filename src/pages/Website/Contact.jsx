@@ -5,18 +5,11 @@ const Contact = () => {
     return (
         <div className="bg-white min-h-screen">
             {/* Hero Section */}
-            <section className="relative py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="contact.png"
-                        alt="Contact background"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-                </div>
+            <section className="relative bg-[#252f48] py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
+            
                 <div className="container text-center relative z-10">
                     <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">GET IN TOUCH</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">CONTACT <span className="text-[#FFD700]">US</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">CONTACT <span className="text-[#FFD700]">US</span></h1>
                 </div>
             </section>
 

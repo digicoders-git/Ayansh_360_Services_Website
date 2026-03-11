@@ -4,18 +4,11 @@ const About = () => {
     return (
         <div className="bg-white md:pt-32 pt-20 pb-20 md:px-30 text-black">
             {/* Hero Small */}
-            <section className="relative py-20 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="about-hero.jpg"
-                        alt="About background"
-                        className="w-full h-full object-cover opacity-100"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-                </div>
+            <section className="relative bg-[#252f48] py-20 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
+               
                 <div className="container text-center relative z-10">
                     <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter"> ARYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter"> ARYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
                 </div>
             </section>
 

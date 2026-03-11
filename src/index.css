@@ -10,7 +10,7 @@
 
 @layer base {
     body {
-        @apply bg-black text-white font-inter antialiased;
+        @apply bg-[#252f48] text-white font-inter antialiased;
     }
 }
 

@@ -10,25 +10,11 @@ const Client = () => {
     return (
         <div className="bg-white overflow-x-hidden">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center px-4 md:px-8 lg:px-16 overflow-hidden pt-20">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
-                        alt="Clients background"
-                        className="w-full h-full object-cover opacity-30"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
-                </div>
-                <div className="container relative z-10">
-                    <div className="max-w-2xl">
-                        <span className="text-[#FFD700] font-bold uppercase tracking-[4px] mb-4 block text-sm">TESTIMONIALS</span>
-                        <h1 className="text-3xl sm:text-4xl md:text-6xl mb-6 leading-tight text-black font-bold">
-                            WHAT OUR <span className="text-[#FFD700]">CLIENTS</span> SAY
-                        </h1>
-                        <p className="text-gray-600 text-base sm:text-lg mb-10 max-w-lg leading-relaxed">
-                            Hear from our satisfied clients about their experience working with ARYANSH 360 SERVICES.
-                        </p>
-                    </div>
+            <section className="relative bg-[#252f48] py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
+            
+                <div className="container text-center relative z-10">
+                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">TESTIMONIALS</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">WHAT OUR <span className="text-[#FFD700]">CLIENTS SAY</span></h1>
                 </div>
             </section>
 

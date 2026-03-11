@@ -38,18 +38,11 @@ const Services = () => {
     return (
         <div className="bg-white pt-32 pb-20 md:px-30 text-black">
             {/* Header */}
-            <section className="relative py-20 border-b border-black/5 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
-                <div className="absolute inset-0 z-0">
-                    <img
-                        src="about-hero.jpg"
-                        alt="Services background"
-                        className="w-full h-full object-cover opacity-20"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-                </div>
+            <section className="relative bg-[#252f48] py-20 border-b border-black/5 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
+               
                 <div className="container text-center relative z-10">
                     <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">OUR EXPERTISE</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-black uppercase tracking-tighter">SERVICES WE <span className="text-[#FFD700]">PROVIDE</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">SERVICES WE <span className="text-[#FFD700]">PROVIDE</span></h1>
                 </div>
             </section>
 

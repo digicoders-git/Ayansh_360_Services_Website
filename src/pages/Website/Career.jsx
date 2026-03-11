@@ -12,7 +12,7 @@ const Career = () => {
     return (
         <div className="bg-white overflow-x-hidden">
             {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center px-4 md:px-8 lg:px-16 overflow-hidden pt-20">
+            {/* <section className="relative min-h-screen flex items-center px-4 md:px-8 lg:px-16 overflow-hidden pt-20">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
@@ -35,6 +35,15 @@ const Career = () => {
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                         </Link>
                     </div>
+                </div>
+            </section> */}
+
+            {/* Hero Section */}
+            <section className="relative bg-[#252f48] py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
+            
+                <div className="container text-center relative z-10">
+                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">JOIN OUR TEAM</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">BUILD YOUR <span className="text-[#FFD700]">CAREER</span></h1>
                 </div>
             </section>
 
