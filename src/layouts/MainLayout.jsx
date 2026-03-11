@@ -57,7 +57,7 @@ export default function MainLayout() {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-14 h-14 bg-black hover:bg-gray-800 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-50"
+          className="fixed bottom-8 right-8 w-14 h-14 bg-[#252f48] hover:bg-[#252f48]/80 text-white rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 z-50"
           title="Back to Top"
         >
           <i className="fas fa-arrow-up text-xl"></i>
