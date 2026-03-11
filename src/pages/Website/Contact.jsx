@@ -13,36 +13,6 @@ const Contact = () => {
                 </div>
             </section>
 
-            {/* Map Section */}
-            <section className="py-20 px-5 md:px-30">
-                <div className="container">
-                    <div className="relative h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl p-5 border-1 border-gray-300">
-                        {/* Grayscale Map Placeholder */}
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.5!2d80.8!3d26.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a0!3d26.8!5e0!3m2!1sen!2sin!4v1700000000000"
-                            className="w-full h-full grayscale rounded-xl"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-
-                        {/* Address Card Overlay */}
-                        <div className="absolute top-10 left-10 bg-white p-8 rounded-xl shadow-xl max-w-sm hidden md:block">
-                            <h4 className="text-xl font-bold mb-2">Buildarx</h4>
-                            <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                                Plot no 165 vijay nagar sector B<br />
-                                kamakhya colony opposite kanti niketan<br />
-                                nilmatha cantt Lucknow 226002
-                            </p>
-                            <div className="flex items-center gap-2 text-primary font-bold text-sm">
-                                <span>3.1 ★ (241)</span>
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0V5a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-1.414 1.414a1 1 0 001.414 1.414l1.414-1.414zM18 10a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM15.657 14.243l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zM11 17a1 1 0 10-2 0v2a1 1 0 102 0v-2zM4.343 14.243l-1.414 1.414a1 1 0 101.414 1.414l1.414-1.414a1 1 0 00-1.414-1.414zM3 10a1 1 0 011-1h2a1 1 0 110 2H4a1 1 0 01-1-1zM4.343 5.757L2.929 4.343a1 1 0 111.414-1.414l1.414 1.414a1 1 0 01-1.414 1.414z" /></svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Get In Touch Section */}
             <section className="py-24 px-5 md:px-30 bg-white">
@@ -126,6 +96,39 @@ const Contact = () => {
                                 Send Message
                             </button>
                         </form>
+                    </div>
+                </div>
+            </section>
+
+
+
+                        {/* Map Section */}
+            <section className="py-20 px-5 md:px-30">
+                <div className="container">
+                    <div className="relative h-[450px] w-full rounded-3xl overflow-hidden shadow-2xl p-5 border-1 border-gray-300">
+                        {/* Grayscale Map Placeholder */}
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.5!2d80.8!3d26.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a0!3d26.8!5e0!3m2!1sen!2sin!4v1700000000000"
+                            className="w-full h-full grayscale rounded-xl"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+
+                        {/* Address Card Overlay */}
+                        <div className="absolute top-10 left-10 bg-white p-8 rounded-xl shadow-xl max-w-sm hidden md:block">
+                            <h4 className="text-xl font-bold mb-2">Buildarx</h4>
+                            <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                                Plot no 165 vijay nagar sector B<br />
+                                kamakhya colony opposite kanti niketan<br />
+                                nilmatha cantt Lucknow 226002
+                            </p>
+                            <div className="flex items-center gap-2 text-primary font-bold text-sm">
+                                <span>3.1 ★ (241)</span>
+                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0V5a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-1.414 1.414a1 1 0 001.414 1.414l1.414-1.414zM18 10a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM15.657 14.243l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zM11 17a1 1 0 10-2 0v2a1 1 0 102 0v-2zM4.343 14.243l-1.414 1.414a1 1 0 101.414 1.414l1.414-1.414a1 1 0 00-1.414-1.414zM3 10a1 1 0 011-1h2a1 1 0 110 2H4a1 1 0 01-1-1zM4.343 5.757L2.929 4.343a1 1 0 111.414-1.414l1.414 1.414a1 1 0 01-1.414 1.414z" /></svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
