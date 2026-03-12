@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getJobs } from '../../apis/website';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Career = () => {
     const [jobs, setJobs] = useState([]);
@@ -59,20 +60,20 @@ const Career = () => {
                                         <h3 className="text-lg sm:text-2xl font-bold text-black mb-3">{job.title}</h3>
                                         <div className="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
                                             <span className="flex items-center gap-2 text-gray-600">
-                                                <svg className="w-4 h-4 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                                <i className="fas fa-map-marker-alt text-[#FFD700]"></i>
                                                 {job.location}
                                             </span>
                                             <span className="flex items-center gap-2 text-gray-600">
-                                                <svg className="w-4 h-4 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                                <i className="fas fa-clock text-[#FFD700]"></i>
                                                 {job.type}
                                             </span>
                                             <span className="flex items-center gap-2 text-[#FFD700] font-bold">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                                <i className="fas fa-indian-rupee-sign"></i>
                                                 {job.salary}
                                             </span>
                                         </div>
                                     </div>
-                                    <Link to={`/contact?type=${encodeURIComponent(job.title)}`} className="w-full sm:w-auto bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3 px-6 sm:px-8 uppercase text-xs sm:text-sm tracking-wider transition-all text-center">
+                                    <Link to={`/enquiry?type=${encodeURIComponent(job.title)}`} className="w-full sm:w-auto bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3 px-6 sm:px-8 uppercase text-xs sm:text-sm tracking-wider transition-all text-center">
                                         APPLY NOW
                                     </Link>
                                 </div>
@@ -138,8 +139,8 @@ const Career = () => {
                     <p className="text-gray-700 mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed">
                         Send us your resume and let us know about your skills. We're always looking for talented individuals to join our team.
                     </p>
-                    <Link to="/contact" className="inline-flex items-center gap-2 bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3 sm:py-4 md:py-5 px-6 sm:px-10 md:px-12 text-xs sm:text-base md:text-lg uppercase tracking-wider transition-all">
-                        SEND YOUR RESUME
+                    <Link to="/enquiry" className="inline-flex items-center gap-2 bg-[#FFD700] hover:bg-[#E6C200] text-black font-bold py-3 sm:py-4 md:py-5 px-6 sm:px-10 md:px-12 text-xs sm:text-base md:text-lg uppercase tracking-wider transition-all">
+                        SEND YOUR REQUEST
                         <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                     </Link>
                 </div>

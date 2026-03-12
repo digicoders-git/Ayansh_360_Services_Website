@@ -19,3 +19,13 @@ export const getContactInfo = () => axios.get(`${API_BASE}/contact-info`);
 
 // Enquiries
 export const createEnquiry = (data) => axios.post(`${API_BASE}/enquiries`, data);
+
+// User Contact
+export const createUserContact = (data) => axios.post(`${API_BASE}/user-contact`, data);
+
+// Change Password (for admin)
+export const changePassword = (oldPassword, newPassword, confirmPassword, token) => 
+  axios.post(`${API_BASE}/auth/change-password`, 
+    { oldPassword, newPassword, confirmPassword },
+    { headers: { Authorization: `Bearer ${token}` } }
+  );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getContactInfo, createEnquiry } from '../../apis/website';
+import { getContactInfo, createUserContact } from '../../apis/website';
 
 const Contact = () => {
     const [contactInfo, setContactInfo] = useState(null);
@@ -10,7 +10,6 @@ const Contact = () => {
         name: '',
         email: '',
         phone: '',
-        subject: '',
         message: ''
     });
     const [submitting, setSubmitting] = useState(false);
@@ -35,22 +34,27 @@ const Contact = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
+        setFormData(prev => (({
             ...prev,
             [name]: value
-        }));
+        })));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             setSubmitting(true);
-            await createEnquiry(formData);
+            await createUserContact({
+                name: formData.name,
+                email: formData.email,
+                mobile: formData.phone,
+                message: formData.message
+            });
             setSubmitMessage({ type: 'success', text: 'Message sent successfully!' });
-            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+            setFormData({ name: '', email: '', phone: '', message: '' });
             setTimeout(() => setSubmitMessage(null), 3000);
         } catch (err) {
-            console.error('Error submitting enquiry:', err);
+            console.error('Error submitting contact:', err);
             setSubmitMessage({ type: 'error', text: 'Failed to send message. Please try again.' });
         } finally {
             setSubmitting(false);
@@ -159,15 +163,6 @@ const Contact = () => {
                                 name="phone"
                                 placeholder="Phone"
                                 value={formData.phone}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-[rgba(255,255,22,0.2)] p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#FFD700]/50 transition-all text-sm"
-                            />
-                            <input
-                                type="text"
-                                name="subject"
-                                placeholder="Type Subject"
-                                value={formData.subject}
                                 onChange={handleChange}
                                 required
                                 className="w-full bg-[rgba(255,255,22,0.2)] p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#FFD700]/50 transition-all text-sm"

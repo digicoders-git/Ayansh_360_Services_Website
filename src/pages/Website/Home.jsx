@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getServices, getProjects, getTestimonials } from '../../apis/website';
 
 const Home = () => {
+    const [services, setServices] = useState([]);
+    const [projects, setProjects] = useState([]);
+    const [testimonials, setTestimonials] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [servicesRes, projectsRes, testimonialsRes] = await Promise.all([
+                    getServices(),
+                    getProjects(),
+                    getTestimonials()
+                ]);
+                setServices(servicesRes.data.data || []);
+                setProjects(projectsRes.data.data || []);
+                setTestimonials(testimonialsRes.data.data || []);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchData();
+    }, []);
+
     return (
-        <div className="bg-white overflow-x-hidden">
+        <>
             {/* Hero Section */}
             <section className="relative min-h-screen flex items-center px-4 md:px-8 lg:px-16 overflow-hidden">
                 {/* Background Overlay */}
@@ -63,47 +89,68 @@ const Home = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-l border-black/5">
-                        {/* Service 1 */}
-                        <div className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden">
-                            <img src="service-1.jpg" alt="Painting" className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity" />
-                            <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
-                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">Professional <br /> Painting</h3>
-                                <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
-                                    Expertise urban design wea together thearea divers wheunknown pnturies.
-                                </p>
-                            </div>
-                            <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
-                                <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
-                            </Link>
-                        </div>
+                        {services.length > 0 ? (
+                            services.slice(0, 3).map((service, idx) => (
+                                <div key={idx} className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden min-h-96">
+                                    {service.image && (
+                                        <img src={`http://localhost:5000${service.image}`} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity" />
+                                    )}
+                                    <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
+                                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">{service.title}</h3>
+                                        <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
+                                            {service.desc}
+                                        </p>
+                                    </div>
+                                    <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
+                                        <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                                    </Link>
+                                </div>
+                            ))
+                        ) : (
+                            <>
+                                {/* Service 1 */}
+                                <div className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden min-h-96">
+                                    <img src="service-1.jpg" alt="Painting" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity" />
+                                    <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
+                                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">Professional <br /> Painting</h3>
+                                        <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
+                                            Expert interior and exterior painting services with premium quality finishes.
+                                        </p>
+                                    </div>
+                                    <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
+                                        <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                                    </Link>
+                                </div>
 
-                        {/* Service 2 */}
-                        <div className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden">
-                            <img src="service-2.jpg" alt="Construction" className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity" />
-                            <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
-                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">Construction <br /> Work</h3>
-                                <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
-                                    Expertise urban design wea together thearea divers wheunknown pnturies.
-                                </p>
-                            </div>
-                            <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
-                                <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
-                            </Link>
-                        </div>
+                                {/* Service 2 */}
+                                <div className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden min-h-96">
+                                    <img src="service-2.jpg" alt="Construction" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity" />
+                                    <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
+                                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">Construction <br /> Work</h3>
+                                        <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
+                                            Professional construction services for residential and commercial projects.
+                                        </p>
+                                    </div>
+                                    <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
+                                        <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                                    </Link>
+                                </div>
 
-                        {/* Service 3 */}
-                        <div className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden">
-                            <img src="service-3.jpg" alt="Waterproofing" className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity" />
-                            <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
-                                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">Waterproofing <br /> Solutions</h3>
-                                <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
-                                    Expertise urban design wea together thearea divers wheunknown pnturies.
-                                </p>
-                            </div>
-                            <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
-                                <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
-                            </Link>
-                        </div>
+                                {/* Service 3 */}
+                                <div className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden min-h-96">
+                                    <img src="service-3.jpg" alt="Waterproofing" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity" />
+                                    <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
+                                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">Waterproofing <br /> Solutions</h3>
+                                        <p className="text-white text-xs sm:text-sm leading-relaxed max-w-[200px]">
+                                            Advanced waterproofing solutions to protect your property from moisture damage.
+                                        </p>
+                                    </div>
+                                    <Link to="/services" className="mt-auto relative z-10 inline-flex items-center justify-center w-8 sm:w-9 md:w-10 h-8 sm:h-9 md:h-10 border border-white/40 rounded-sm hover:bg-primary hover:text-black hover:border-primary transition-all transform group-hover:rotate-[-45deg] text-white">
+                                        <svg className="w-4 sm:w-4 md:w-5 h-4 sm:h-4 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                                    </Link>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </section>
@@ -240,69 +287,93 @@ const Home = () => {
 
                         {/* Project Cards (Right) */}
                         <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {/* Project 1 */}
-                            <div className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
-                                <div className="h-64 overflow-hidden relative">
-                                    <img
-                                        src="service-1.jpg"
-                                        alt="Interior Painting"
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
-                                </div>
-                                <div className="p-6">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-6 h-[2px] bg-primary"></div>
-                                        <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Painting</span>
+                            {projects.length > 0 ? (
+                                projects.slice(0, 3).map((project, idx) => (
+                                    <div key={idx} className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
+                                        <div className="h-64 overflow-hidden relative">
+                                            <img
+                                                src={`http://localhost:5000${project.image}`}
+                                                alt={project.title}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+                                        </div>
+                                        <div className="p-6">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="w-6 h-[2px] bg-primary"></div>
+                                                <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">{project.category}</span>
+                                            </div>
+                                            <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">{project.title}</h3>
+                                        </div>
                                     </div>
-                                    <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">Interior Painting</h3>
-                                </div>
-                            </div>
+                                ))
+                            ) : (
+                                <>
+                                    {/* Project 1 */}
+                                    {/* <div className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
+                                        <div className="h-64 overflow-hidden relative">
+                                            <img
+                                                src="service-1.jpg"
+                                                alt="Interior Painting"
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+                                        </div>
+                                        <div className="p-6">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="w-6 h-[2px] bg-primary"></div>
+                                                <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Painting</span>
+                                            </div>
+                                            <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">Interior Painting</h3>
+                                        </div>
+                                    </div> */}
 
-                            {/* Project 2 */}
-                            <div className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
-                                <div className="h-64 overflow-hidden relative">
-                                    <img
-                                        src="service-2.jpg"
-                                        alt="Construction Work"
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
-                                </div>
-                                <div className="p-6">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-6 h-[2px] bg-primary"></div>
-                                        <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Construction</span>
-                                    </div>
-                                    <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">Building Construction</h3>
-                                </div>
-                            </div>
+                                    {/* Project 2 */}
+                                    {/* <div className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
+                                        <div className="h-64 overflow-hidden relative">
+                                            <img
+                                                src="service-2.jpg"
+                                                alt="Construction Work"
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+                                        </div>
+                                        <div className="p-6">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="w-6 h-[2px] bg-primary"></div>
+                                                <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Construction</span>
+                                            </div>
+                                            <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">Building Construction</h3>
+                                        </div>
+                                    </div> */}
 
-                            {/* Project 3 */}
-                            <div className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
-                                <div className="h-64 overflow-hidden relative">
-                                    <img
-                                        src="service-3.jpg"
-                                        alt="Waterproofing"
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
-                                </div>
-                                <div className="p-6">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-6 h-[2px] bg-primary"></div>
-                                        <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Waterproofing</span>
-                                    </div>
-                                    <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">Waterproofing Solutions</h3>
-                                </div>
-                            </div>
+                                    {/* Project 3 */}
+                                    {/* <div className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
+                                        <div className="h-64 overflow-hidden relative">
+                                            <img
+                                                src="service-3.jpg"
+                                                alt="Waterproofing"
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                            />
+                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+                                        </div>
+                                        <div className="p-6">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <div className="w-6 h-[2px] bg-primary"></div>
+                                                <span className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Waterproofing</span>
+                                            </div>
+                                            <h3 className="text-black font-bold text-lg uppercase tracking-tight font-outfit">Waterproofing Solutions</h3>
+                                        </div>
+                                    </div> */}
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="py-12 sm:py-16 md:py-24 relative overflow-hidden text-gray-800 px-4">
+            <section className="py-12 sm:py-16 md:py-24 text-white relative overflow-hidden text-gray-800 px-4">
                 <img
                     src="home-hero.avif"
                     alt="Call to action"
@@ -389,57 +460,90 @@ const Home = () => {
 
                         {/* Testimonial Cards (Right) */}
                         <div className="lg:w-2/3 flex flex-col gap-6 w-full">
-                            {/* Card 1 */}
-                            <div className="bg-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 relative group">
-                                <div className="absolute right-8 top-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.437.917-4 3.638-4 5.849h3.983v10h-9.979z" /></svg>
-                                </div>
-                                <div className="flex text-primary gap-1 mb-6">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                                    ))}
-                                </div>
-                                <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
-                                    "Great Quality Products With areaw Good Packaging unknown printer toweok year galley of type and scrambled itter area make pecimive centuries"
-                                </p>
-                                <div className="flex items-center gap-4">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=jpg&q=60&w=3000&auto=format&fit=crop"
-                                        alt="Client"
-                                        className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
-                                    />
-                                    <div>
-                                        <h4 className="text-black font-bold text-lg font-outfit">Makjer Moken</h4>
-                                        <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at Buildanx</span>
+                            {testimonials.length > 0 ? (
+                                testimonials.slice(0, 2).map((testimonial, idx) => (
+                                    <div key={idx} className="bg-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 relative group">
+                                        <div className="absolute right-8 top-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                            <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.437.917-4 3.638-4 5.849h3.983v10h-9.979z" /></svg>
+                                        </div>
+                                        <div className="flex text-primary gap-1 mb-6">
+                                            {[...Array(testimonial.rating || 5)].map((_, i) => (
+                                                <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                            ))}
+                                        </div>
+                                        <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
+                                            "{testimonial.text}"
+                                        </p>
+                                        <div className="flex items-center gap-4">
+                                            {testimonial.clientImage && (
+                                                <img
+                                                    src={`http://localhost:5000${testimonial.clientImage}`}
+                                                    alt={testimonial.name}
+                                                    className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
+                                                />
+                                            )}
+                                            <div>
+                                                <h4 className="text-black font-bold text-lg font-outfit">{testimonial.name}</h4>
+                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">{testimonial.role}</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                ))
+                            ) : (
+                                <>
+                                    {/* Card 1 */}
+                                    <div className="bg-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 relative group">
+                                        <div className="absolute right-8 top-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                            <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.437.917-4 3.638-4 5.849h3.983v10h-9.979z" /></svg>
+                                        </div>
+                                        <div className="flex text-primary gap-1 mb-6">
+                                            {[...Array(5)].map((_, i) => (
+                                                <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                            ))}
+                                        </div>
+                                        <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
+                                            "Great Quality Products With areaw Good Packaging unknown printer toweok year galley of type and scrambled itter area make pecimive centuries"
+                                        </p>
+                                        <div className="flex items-center gap-4">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fm=jpg&q=60&w=3000&auto=format&fit=crop"
+                                                alt="Client"
+                                                className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
+                                            />
+                                            <div>
+                                                <h4 className="text-black font-bold text-lg font-outfit">Makjer Moken</h4>
+                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at Buildanx</span>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                            {/* Card 2 */}
-                            <div className="bg-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 relative group">
-                                <div className="absolute right-8 top-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.437.917-4 3.638-4 5.849h3.983v10h-9.979z" /></svg>
-                                </div>
-                                <div className="flex text-primary gap-1 mb-6">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                                    ))}
-                                </div>
-                                <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
-                                    "Great Quality Products With areaw Good Packaging unknown printer toweok year galley of type and scrambled itter area make pecimive centuries"
-                                </p>
-                                <div className="flex items-center gap-4">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fm=jpg&q=60&w=3000&auto=format&fit=crop"
-                                        alt="Client"
-                                        className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
-                                    />
-                                    <div>
-                                        <h4 className="text-black font-bold text-lg font-outfit">Makjer Moken</h4>
-                                        <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at Buildanx</span>
+                                    {/* Card 2 */}
+                                    <div className="bg-white p-8 sm:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-50 relative group">
+                                        <div className="absolute right-8 top-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                            <svg className="w-16 h-16 text-gray-400" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.437.917-4 3.638-4 5.849h3.983v10h-9.979z" /></svg>
+                                        </div>
+                                        <div className="flex text-primary gap-1 mb-6">
+                                            {[...Array(5)].map((_, i) => (
+                                                <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                                            ))}
+                                        </div>
+                                        <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
+                                            "Great Quality Products With areaw Good Packaging unknown printer toweok year galley of type and scrambled itter area make pecimive centuries"
+                                        </p>
+                                        <div className="flex items-center gap-4">
+                                            <img
+                                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fm=jpg&q=60&w=3000&auto=format&fit=crop"
+                                                alt="Client"
+                                                className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
+                                            />
+                                            <div>
+                                                <h4 className="text-black font-bold text-lg font-outfit">Makjer Moken</h4>
+                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at Buildanx</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
+                                </>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -491,7 +595,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 };
 

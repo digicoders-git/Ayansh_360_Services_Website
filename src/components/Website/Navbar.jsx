@@ -1,11 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { getContactInfo } from '../../apis/website';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [contactInfo, setContactInfo] = useState({ phone: '', email: '' });
     const location = useLocation();
+
+    useEffect(() => {
+        fetchContactInfo();
+    }, []);
+
+    const fetchContactInfo = async () => {
+        try {
+            const response = await getContactInfo();
+            setContactInfo(response.data.data);
+        } catch (error) {
+            console.error('Error fetching contact info:', error);
+        }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -28,14 +43,14 @@ const Navbar = () => {
                 <div className="bg-[#252f48]/50 backdrop-blur-sm text-white hidden md:block py-3">
                     <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center text-xs font-medium">
                         <div className="flex gap-6 items-center">
-                            <a href="tel:+919999452314" className="flex items-center gap-2 hover:text-[#FFD700] transition-colors">
+                            <a href={`tel:${contactInfo.phone}`} className="flex items-center gap-2 hover:text-[#FFD700] transition-colors">
                                 <svg className="w-3.5 h-3.5 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                                +91 9999452314
+                                {contactInfo.phone}
                             </a>
                             <span className="text-white/30">|</span>
-                            <a href="mailto:Kishan.rai30@gmail.com" className="flex items-center gap-2 hover:text-[#FFD700] transition-colors">
+                            <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 hover:text-[#FFD700] transition-colors">
                                 <svg className="w-3.5 h-3.5 text-[#FFD700]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                                Kishan.rai30@gmail.com
+                                {contactInfo.email}
                             </a>
                         </div>
                         <div className="flex gap-6 items-center">
