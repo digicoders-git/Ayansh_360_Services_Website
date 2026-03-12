@@ -9,9 +9,9 @@ const Footer = () => {
                     {/* Branding */}
                     <div className="flex flex-col gap-6">
                         <Link to="/" className="flex group items-center justify-center gap-3 w-max">
-                            <img src="/logo(1).png" alt="ARYANSH 360 Logo" className="w-25" />
+                            <img src="/logo(1).png" alt="AAYANSH 360 Logo" className="w-25" />
                             <div className='flex flex-col gap-0.5'>
-                                <span className="text-sm font-bold text-white tracking-wide">ARYANSH 360</span>
+                                <span className="text-sm font-bold text-white tracking-wide">AAYANSH 360</span>
                                 <span className="text-[10px] uppercase tracking-[2px] text-[#FFD700] font-semibold">SERVICES</span>
                             </div>
                         </Link>

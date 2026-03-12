@@ -216,7 +216,7 @@ const Home = () => {
 
             {/* Working Projects Section */}
             <section className="py-24 sm:py-32 bg-slate-950 text-white relative overflow-hidden px-4 md:px-8 lg:px-16">
-                {/* Background Letter 'A' (for Aryansh) */}
+                {/* Background Letter 'A' (for AAYANSH) */}
                 <div className="absolute left-[-100px] top-1/2 -translate-y-1/2 text-[400px] font-bold text-white/[0.03] select-none pointer-events-none z-0">
                     A
                 </div>
@@ -328,7 +328,7 @@ const Home = () => {
                             <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">ABOUT US</span>
                             <h2 className="text-2xl sm:text-3xl md:text-5xl mb-6  leading-tight">TRUSTED BY <span className="text-primary">THOUSANDS</span></h2>
                             <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
-                                With over 15 years of experience in the construction and painting industry, ARYANSH 360 has established itself as a trusted partner for residential and commercial projects. Our commitment to quality, integrity, and customer satisfaction sets us apart.
+                                With over 15 years of experience in the construction and painting industry, AAYANSH 360 has established itself as a trusted partner for residential and commercial projects. Our commitment to quality, integrity, and customer satisfaction sets us apart.
                             </p>
                             <ul className="flex flex-col gap-4 mb-8">
                                 <li className="flex items-center gap-3">
@@ -456,12 +456,12 @@ const Home = () => {
                     <div className="space-y-4">
                         {[
                             {
-                                q: "What services does ARYANSH 360 offer?",
+                                q: "What services does AAYANSH 360 offer?",
                                 a: "We provide professional painting services (interior & exterior), small construction work, waterproofing solutions, and home renovation services for both residential and commercial properties."
                             },
                             {
                                 q: "How long have you been in the business?",
-                                a: "ARYANSH 360 has been serving customers for over 15 years with a proven track record of quality work and customer satisfaction."
+                                a: "AAYANSH 360 has been serving customers for over 15 years with a proven track record of quality work and customer satisfaction."
                             },
                             {
                                 q: "Do you provide free consultations?",

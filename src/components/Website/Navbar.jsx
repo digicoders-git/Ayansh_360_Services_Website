@@ -54,7 +54,7 @@ const Navbar = () => {
                         <Link to="/" className="flex group items-center gap-3">
                             <img src="/logo(1).png" alt="Buildarx Logo" className="h-18 w-auto" />
                             <div className='flex flex-col gap-0.5'>
-                                <span className="text-sm font-bold text-white tracking-wide">ARYANSH 360</span>
+                                <span className="text-sm font-bold text-white tracking-wide">AAYANSH 360</span>
                                 <span className="text-[10px] uppercase tracking-[2px] text-[#FFD700] font-semibold">SERVICES</span>
                             </div>
                          

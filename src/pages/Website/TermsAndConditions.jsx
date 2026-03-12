@@ -24,7 +24,7 @@ const TermsAndConditions = () => {
                     <section className="border-l-4 border-[#FFD700] pl-6">
                         <h2 className="text-2xl font-bold mb-4 text-black">2. Use License</h2>
                         <p className="text-gray-700 leading-relaxed mb-4">
-                            Permission is granted to temporarily download one copy of the materials on ARYANSH 360 SERVICES website for personal, non-commercial viewing only. Under this license you may not:
+                            Permission is granted to temporarily download one copy of the materials on AAYANSH 360 SERVICES website for personal, non-commercial viewing only. Under this license you may not:
                         </p>
                         <ul className="space-y-2 text-gray-700">
                             <li className="flex items-start gap-3">
@@ -49,28 +49,28 @@ const TermsAndConditions = () => {
                     <section className="border-l-4 border-[#FFD700] pl-6">
                         <h2 className="text-2xl font-bold mb-4 text-black">3. Disclaimer</h2>
                         <p className="text-gray-700 leading-relaxed">
-                            The materials on ARYANSH 360 SERVICES website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim all warranties including merchantability, fitness for a particular purpose, or non-infringement of intellectual property rights.
+                            The materials on AAYANSH 360 SERVICES website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim all warranties including merchantability, fitness for a particular purpose, or non-infringement of intellectual property rights.
                         </p>
                     </section>
 
                     <section className="border-l-4 border-[#FFD700] pl-6">
                         <h2 className="text-2xl font-bold mb-4 text-black">4. Limitations</h2>
                         <p className="text-gray-700 leading-relaxed">
-                            In no event shall ARYANSH 360 SERVICES or its suppliers be liable for any damages arising out of the use or inability to use the materials on our website.
+                            In no event shall AAYANSH 360 SERVICES or its suppliers be liable for any damages arising out of the use or inability to use the materials on our website.
                         </p>
                     </section>
 
                     <section className="border-l-4 border-[#FFD700] pl-6">
                         <h2 className="text-2xl font-bold mb-4 text-black">5. Accuracy of Materials</h2>
                         <p className="text-gray-700 leading-relaxed">
-                            The materials on ARYANSH 360 SERVICES website could include technical, typographical, or photographic errors. We do not warrant that any materials are accurate, complete, or current.
+                            The materials on AAYANSH 360 SERVICES website could include technical, typographical, or photographic errors. We do not warrant that any materials are accurate, complete, or current.
                         </p>
                     </section>
 
                     <section className="border-l-4 border-[#FFD700] pl-6">
                         <h2 className="text-2xl font-bold mb-4 text-black">6. Links</h2>
                         <p className="text-gray-700 leading-relaxed">
-                            ARYANSH 360 SERVICES is not responsible for the contents of any linked sites. The inclusion of any link does not imply endorsement. Use of any linked website is at the user's own risk.
+                            AAYANSH 360 SERVICES is not responsible for the contents of any linked sites. The inclusion of any link does not imply endorsement. Use of any linked website is at the user's own risk.
                         </p>
                     </section>
 

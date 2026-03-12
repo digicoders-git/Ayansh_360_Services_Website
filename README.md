@@ -1,10 +1,10 @@
-# ARYANSH 360 SERVICES - Website
+# AAYANSH 360 SERVICES - Website
 
-A modern, professional website for ARYANSH 360 SERVICES, specializing in painting, construction, and waterproofing solutions.
+A modern, professional website for AAYANSH 360 SERVICES, specializing in painting, construction, and waterproofing solutions.
 
 ## 🎯 Project Overview
 
-ARYANSH 360 SERVICES is a full-featured React-based website showcasing professional construction and painting services. The site features a modern design with smooth animations, responsive layouts, and comprehensive service information.
+AAYANSH 360 SERVICES is a full-featured React-based website showcasing professional construction and painting services. The site features a modern design with smooth animations, responsive layouts, and comprehensive service information.
 
 ## 🚀 Features
 
@@ -191,7 +191,7 @@ npm run build
 
 ## 👨‍💼 Company
 
-**ARYANSH 360 SERVICES**  
+**AAYANSH 360 SERVICES**  
 Professional painting, construction, and waterproofing solutions  
 Building with quality and integrity
 

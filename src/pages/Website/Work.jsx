@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { getProjects } from '../../apis/website';
 
 const Work = () => {
-    const projects = [
-        { title: "Modern Villa Renovation", category: "Construction", image: "/service-2.jpg" },
-        { title: "Commercial Building Painting", category: "Painting", image: "/service-1.jpg" },
-        { title: "Waterproofing Solutions", category: "Waterproofing", image: "/service-3.jpg" },
-        { title: "Residential Interior Painting", category: "Painting", image: "/service-1.jpg" },
-        { title: "Industrial Construction", category: "Construction", image: "/service-2.jpg" },
-        { title: "Exterior Waterproofing", category: "Waterproofing", image: "/service-3.jpg" }
-    ];
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetchProjects();
+    }, []);
+
+    const fetchProjects = async () => {
+        try {
+            setLoading(true);
+            const response = await getProjects();
+            setProjects(response.data.data || []);
+        } catch (err) {
+            console.error('Error fetching projects:', err);
+            setError('Failed to load projects');
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className="bg-white overflow-x-hidden">
@@ -31,22 +44,36 @@ const Work = () => {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                        {projects.map((project, i) => (
-                            <div key={i} className="group relative overflow-hidden border-2 border-black/10 hover:border-[#FFD700] transition-all">
-                                <div className="relative h-64 sm:h-72 overflow-hidden bg-gray-200">
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
-                                    />
-                                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all"></div>
-                                </div>
-                                <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white">
-                                    <span className="text-[#FFD700] text-xs sm:text-sm font-bold uppercase tracking-wider mb-2">{project.category}</span>
-                                    <h3 className="text-lg sm:text-xl font-bold">{project.title}</h3>
-                                </div>
+                        {loading ? (
+                            <div className="col-span-full text-center py-20">
+                                <p className="text-gray-500">Loading projects...</p>
                             </div>
-                        ))}
+                        ) : error ? (
+                            <div className="col-span-full text-center py-20">
+                                <p className="text-red-500">{error}</p>
+                            </div>
+                        ) : projects.length > 0 ? (
+                            projects.map((project, i) => (
+                                <div key={i} className="group relative overflow-hidden border-2 border-black/10 hover:border-[#FFD700] transition-all">
+                                    <div className="relative h-64 sm:h-72 overflow-hidden bg-gray-200">
+                                        <img
+                                            src={project.imageFileName ? `http://localhost:5000${project.image}` : 'https://via.placeholder.com/400'}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
+                                        />
+                                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all"></div>
+                                    </div>
+                                    <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white">
+                                        <span className="text-[#FFD700] text-xs sm:text-sm font-bold uppercase tracking-wider mb-2">{project.category}</span>
+                                        <h3 className="text-lg sm:text-xl font-bold">{project.title}</h3>
+                                    </div>
+                                </div>
+                            ))
+                        ) : (
+                            <div className="col-span-full text-center py-20">
+                                <p className="text-gray-500">No projects available</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>

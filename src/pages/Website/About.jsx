@@ -8,7 +8,7 @@ const About = () => {
                
                 <div className="container text-center relative z-10">
                     <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter"> ARYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter"> AAYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
                 </div>
             </section>
 
