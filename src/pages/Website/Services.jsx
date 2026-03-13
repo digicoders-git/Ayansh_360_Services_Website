@@ -6,6 +6,7 @@ const Services = () => {
     const [servicesList, setServicesList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const imageUrl = import.meta.env.VITE_IMAGE_URL || 'http://localhost:5000';
 
     useEffect(() => {
         fetchServices();
@@ -52,7 +53,7 @@ const Services = () => {
                     ) : servicesList.length > 0 ? (
                         servicesList.map((service, index) => (
                             <div key={index} className="group bg-black p-12 border border-black/5 transition-all flex flex-col gap-8 min-h-[450px] relative overflow-hidden">
-                                <img src={service.imageFileName ? `http://localhost:5000${service.image}` : 'https://via.placeholder.com/400'} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity" />
+                                <img src={service.imageFileName ? `${imageUrl}${service.image}` : 'https://via.placeholder.com/400'} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-50 transition-opacity" />
                                 <div className="relative z-10 flex flex-col gap-8 h-full">
                                     <div className="flex flex-col gap-5">
                                         <h3 className="text-3xl font-bold text-white leading-tight uppercase tracking-tighter">

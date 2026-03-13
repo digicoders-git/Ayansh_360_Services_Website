@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getServices, getProjects, getTestimonials } from '../../apis/website';
 
+const IMAGE_URL = import.meta.env.VITE_IMAGE_URL || 'http://localhost:5000';
+
 const Home = () => {
     const [services, setServices] = useState([]);
     const [projects, setProjects] = useState([]);
@@ -93,7 +95,7 @@ const Home = () => {
                             services.slice(0, 3).map((service, idx) => (
                                 <div key={idx} className="group bg-black p-6 sm:p-8 md:p-12 border-r border-b border-black/5 transition-all flex flex-col gap-6 sm:gap-8 relative overflow-hidden min-h-96">
                                     {service.image && (
-                                        <img src={`http://localhost:5000${service.image}`} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity" />
+                                        <img src={`${IMAGE_URL}${service.image}`} alt={service.title} className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-20 transition-opacity" />
                                     )}
                                     <div className="relative z-10 flex flex-col gap-3 sm:gap-4">
                                         <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white uppercase tracking-tight leading-tight">{service.title}</h3>
@@ -292,7 +294,7 @@ const Home = () => {
                                     <div key={idx} className="group bg-white rounded-sm overflow-hidden flex flex-col h-full">
                                         <div className="h-64 overflow-hidden relative">
                                             <img
-                                                src={`http://localhost:5000${project.image}`}
+                                                src={`${IMAGE_URL}${project.image}`}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
@@ -477,7 +479,7 @@ const Home = () => {
                                         <div className="flex items-center gap-4">
                                             {testimonial.clientImage && (
                                                 <img
-                                                    src={`http://localhost:5000${testimonial.clientImage}`}
+                                                    src={`${IMAGE_URL}${testimonial.clientImage}`}
                                                     alt={testimonial.name}
                                                     className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
                                                 />

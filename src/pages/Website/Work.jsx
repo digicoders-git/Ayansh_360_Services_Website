@@ -6,6 +6,7 @@ const Work = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const imageUrl = import.meta.env.VITE_IMAGE_URL || 'http://localhost:5000';
 
     useEffect(() => {
         fetchProjects();
@@ -57,7 +58,7 @@ const Work = () => {
                                 <div key={i} className="group relative overflow-hidden border-2 border-black/10 hover:border-[#FFD700] transition-all">
                                     <div className="relative h-64 sm:h-72 overflow-hidden bg-gray-200">
                                         <img
-                                            src={project.imageFileName ? `http://localhost:5000${project.image}` : 'https://via.placeholder.com/400'}
+                                            src={project.imageFileName ? `${imageUrl}${project.image}` : 'https://via.placeholder.com/400'}
                                             alt={project.title}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 opacity-70"
                                         />
