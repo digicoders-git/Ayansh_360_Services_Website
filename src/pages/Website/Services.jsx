@@ -34,8 +34,8 @@ const Services = () => {
             <section className="relative bg-[#252f48] py-20 border-b border-black/5 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
                
                 <div className="container text-center relative z-10">
-                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">OUR EXPERTISE</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">SERVICES WE <span className="text-[#FFD700]">PROVIDE</span></h1>
+                    <span className="text-[#0681d4] font-bold uppercase tracking-[6px] mb-4 block">OUR EXPERTISE</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">SERVICES WE <span className="text-[#fa5900]">PROVIDE</span></h1>
                 </div>
             </section>
 

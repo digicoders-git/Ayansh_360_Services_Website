@@ -84,7 +84,7 @@ const Home = () => {
                 <div className="container">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-20 gap-6 md:gap-8">
                         <div className="max-w-xl">
-                            <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">WHAT WE DO</span>
+                            <span className="text-[#0681d4] font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">WHAT WE DO</span>
                             <h2 className="text-2xl sm:text-3xl md:text-5xl">EXCELLENCE IN EVERY <span className="text-primary">DETAIL</span></h2>
                         </div>
                         <Link to="/services" className="text-primary font-bold border-b border-primary pb-1 hover:opacity-70 text-sm sm:text-base whitespace-nowrap">VIEW ALL SERVICES</Link>
@@ -161,7 +161,7 @@ const Home = () => {
             <section className="relative bg-white pb-16 sm:pb-24">
                 {/* Yellow Header Area */}
                 <div className="bg-primary pt-16 sm:pt-24 pb-32 sm:pb-48 px-4 md:px-8 lg:px-16 text-center">
-                    <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">HOW WE WORK</span>
+                    <span className="text-[#0681d4] font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">HOW WE WORK</span>
                     <h2 className="text-2xl sm:text-3xl md:text-5xl text-black max-w-3xl mx-auto font-bold uppercase leading-tight">
                         Your Dream Comes True With <br /> Our Few Process
                     </h2>
@@ -276,7 +276,7 @@ const Home = () => {
                         <div className="lg:w-1/3">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-12 h-[2px] bg-primary"></div>
-                                <span className="text-blue-500 font-bold uppercase tracking-[4px] text-xs sm:text-sm">WORKING PROJECTS</span>
+                                <span className="text-[#0681d4] font-bold uppercase tracking-[4px] text-xs sm:text-sm">WORKING PROJECTS</span>
                             </div>
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 leading-tight uppercase font-outfit">
                                 Highlighted Our Project <br /> <span className="text-primary">Excellence</span> Building
@@ -398,7 +398,7 @@ const Home = () => {
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">ABOUT US</span>
+                            <span className="text-[#0681d4] font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">ABOUT US</span>
                             <h2 className="text-2xl sm:text-3xl md:text-5xl mb-6  leading-tight">TRUSTED BY <span className="text-primary">THOUSANDS</span></h2>
                             <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-6">
                                 With over 15 years of experience in the construction and painting industry, AAYANSH 360 has established itself as a trusted partner for residential and commercial projects. Our commitment to quality, integrity, and customer satisfaction sets us apart.
@@ -449,7 +449,7 @@ const Home = () => {
                         <div className="lg:w-1/3">
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-12 h-[2px] bg-primary"></div>
-                                <span className="text-blue-500 font-bold uppercase tracking-[4px] text-xs sm:text-sm">TESTIMONIALS</span>
+                                <span className="text-[#0681d4] font-bold uppercase tracking-[4px] text-xs sm:text-sm">TESTIMONIALS</span>
                             </div>
                             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 leading-tight uppercase font-outfit text-black">
                                 What Our Clients Say <br /> About <span className="text-primary">Building</span> Their Dreams
@@ -555,7 +555,7 @@ const Home = () => {
             <section className="py-16 sm:py-24 md:py-32 bg-white px-4 md:px-8 lg:px-16">
                 <div className="container max-w-4xl mx-auto">
                     <div className="text-center mb-12 md:mb-20">
-                        <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">FREQUENTLY ASKED</span>
+                        <span className="text-[#0681d4] font-bold uppercase tracking-[4px] mb-4 block text-xs sm:text-sm">FREQUENTLY ASKED</span>
                         <h2 className="text-2xl sm:text-3xl md:text-5xl text-black">QUESTIONS & <span className="text-primary">ANSWERS</span></h2>
                     </div>
 

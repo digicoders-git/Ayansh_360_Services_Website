@@ -55,7 +55,7 @@ src/
 ├── App.jsx
 └── index.css
 public/
-├── logo.png
+├── new_logo.png
 ├── service-1.jpg (Painting)
 ├── service-2.jpg (Construction)
 ├── service-3.jpg (Waterproofing)

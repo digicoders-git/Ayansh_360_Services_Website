@@ -7,8 +7,8 @@ const About = () => {
             <section className="relative bg-[#252f48] py-20 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen">
                
                 <div className="container text-center relative z-10">
-                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter"> AAYANSH 360 <span className="text-[#FFD700]">SERVICES</span></h1>
+                    <span className="text-[#0681d4] font-bold uppercase tracking-[6px] mb-4 block">Our Story</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter"> AAYANSH 360 <span className="text-[#fa5900]">SERVICES</span></h1>
                 </div>
             </section>
 
@@ -63,7 +63,7 @@ const About = () => {
             {/* Values Section */}
             <section className="py-24 px-5">
                 <div className="container text-center mb-16">
-                    <span className="text-blue-500 font-bold uppercase tracking-[4px] mb-4 block">Core Values</span>
+                    <span className="text-[#0681d4] font-bold uppercase tracking-[4px] mb-4 block">Core Values</span>
                     <h2 className="text-4xl">WHAT DRIVES US</h2>
                 </div>
                 <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">

@@ -67,8 +67,8 @@ const Contact = () => {
             <section className="relative bg-[#252f48] py-20 h-[400px] pt-45 border-b border-black/10 overflow-hidden -mx-[calc((100vw-98.5%)/2)] w-screen flex items-center">
             
                 <div className="container text-center relative z-10">
-                    <span className="text-blue-500 font-bold uppercase tracking-[6px] mb-4 block">GET IN TOUCH</span>
-                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">CONTACT <span className="text-[#FFD700]">US</span></h1>
+                    <span className="text-[#0681d4] font-bold uppercase tracking-[6px] mb-4 block">GET IN TOUCH</span>
+                    <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter">CONTACT <span className="text-[#fa5900]">US</span></h1>
                 </div>
             </section>
 
@@ -93,7 +93,7 @@ const Contact = () => {
                                 <>
                                     {/* Address */}
                                     <div className="flex items-start gap-6">
-                                        <div className="w-16 h-16 rounded-2xl bg-[#FFFBEB] flex items-center justify-center text-[#FFD700] shrink-0 border border-[#FFD700]/5">
+                                        <div className="w-16 h-16 rounded-2xl bg-[#fff3ee] flex items-center justify-center text-[#fa5900] shrink-0 border border-[#fa5900]/10">
                                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                                         </div>
                                         <div className="flex flex-col py-1">
@@ -104,23 +104,23 @@ const Contact = () => {
 
                                     {/* Phone */}
                                     <div className="flex items-start gap-6">
-                                        <div className="w-16 h-16 rounded-2xl bg-[#FFFBEB] flex items-center justify-center text-[#FFD700] shrink-0 border border-[#FFD700]/5">
+                                        <div className="w-16 h-16 rounded-2xl bg-[#fff3ee] flex items-center justify-center text-[#fa5900] shrink-0 border border-[#fa5900]/10">
                                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                                         </div>
                                         <div className="flex flex-col py-1">
                                             <h4 className="text-xl font-bold text-black mb-1">Phone</h4>
-                                            <a href={`tel:${contactInfo.phone}`} className="text-gray-500 text-sm leading-relaxed hover:text-[#FFD700] transition-colors">{contactInfo.phone}</a>
+                                            <a href={`tel:${contactInfo.phone}`} className="text-gray-500 text-sm leading-relaxed hover:text-[#fa5900] transition-colors">{contactInfo.phone}</a>
                                         </div>
                                     </div>
 
                                     {/* Email */}
                                     <div className="flex items-start gap-6">
-                                        <div className="w-16 h-16 rounded-2xl bg-[#FFFBEB] flex items-center justify-center text-[#FFD700] shrink-0 border border-[#FFD700]/5">
+                                        <div className="w-16 h-16 rounded-2xl bg-[#fff3ee] flex items-center justify-center text-[#fa5900] shrink-0 border border-[#fa5900]/10">
                                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                         </div>
                                         <div className="flex flex-col py-1">
                                             <h4 className="text-xl font-bold text-black mb-1">E-mail Address</h4>
-                                            <a href={`mailto:${contactInfo.email}`} className="text-gray-500 text-sm leading-relaxed hover:text-[#FFD700] transition-colors">{contactInfo.email}</a>
+                                            <a href={`mailto:${contactInfo.email}`} className="text-gray-500 text-sm leading-relaxed hover:text-[#fa5900] transition-colors">{contactInfo.email}</a>
                                         </div>
                                     </div>
                                 </>
@@ -147,7 +147,7 @@ const Contact = () => {
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                className="w-full bg-[rgba(255,255,22,0.2)] p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#FFD700]/50 transition-all text-sm"
+                                className="w-full bg-gray-50 p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#fa5900]/50 transition-all text-sm"
                             />
                             <input
                                 type="email"
@@ -156,7 +156,7 @@ const Contact = () => {
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="w-full bg-[rgba(255,255,22,0.2)] p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#FFD700]/50 transition-all text-sm"
+                                className="w-full bg-gray-50 p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#fa5900]/50 transition-all text-sm"
                             />
                             <input
                                 type="tel"
@@ -165,7 +165,7 @@ const Contact = () => {
                                 value={formData.phone}
                                 onChange={handleChange}
                                 required
-                                className="w-full bg-[rgba(255,255,22,0.2)] p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#FFD700]/50 transition-all text-sm"
+                                className="w-full bg-gray-50 p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#fa5900]/50 transition-all text-sm"
                             />
                             <textarea
                                 name="message"
@@ -174,13 +174,13 @@ const Contact = () => {
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
-                                className="w-full bg-[rgba(255,255,22,0.2)] p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#FFD700]/50 transition-all text-sm resize-none"
+                                className="w-full bg-gray-50 p-5 rounded-lg border border-gray-50 outline-none text-black placeholder:text-gray-400 focus:border-[#fa5900]/50 transition-all text-sm resize-none"
                             ></textarea>
 
                             <button 
                                 type="submit"
                                 disabled={submitting}
-                                className="w-full bg-[#FFD700] hover:bg-[#E6C200] disabled:opacity-50 text-black font-bold py-5 rounded-lg uppercase tracking-widest text-xs transition-all mt-4 leading-none"
+                                className="w-full bg-[#fa5900] hover:bg-[#e05000] disabled:opacity-50 text-white font-bold py-5 rounded-lg uppercase tracking-widest text-xs transition-all mt-4 leading-none"
                             >
                                 {submitting ? 'SENDING...' : 'SEND MESSAGE'}
                             </button>
