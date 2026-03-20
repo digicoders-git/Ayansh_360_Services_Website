@@ -71,8 +71,8 @@ const Navbar = () => {
                             <div className='flex flex-col gap-0.5'>
                                 <span className="text-sm font-bold text-gray-900 tracking-wide">AAYANSH 360</span>
                                 <span className="text-[10px] uppercase tracking-[2px] text-[#fa5900] font-semibold">SERVICES</span>
-                                <span className="text-[5px] uppercase tracking-[2px] text-black font-semibold">Complete Building Care Solutions</span>
-                                <span className="text-[5px] uppercase tracking-[2px] text-gray-500 font-semibold">Waterproofing 🟠 Painting 🟠 Construction </span>
+                                {/* <span className="text-[5px] uppercase tracking-[2px] text-black font-semibold">Complete Building Care Solutions</span> */}
+                                <span className="text-[7px] uppercase tracking-[2px] text-gray-500 font-semibold">Waterproofing 🟠 Painting 🟠 Construction </span>
                             </div>
                         </Link>
 
