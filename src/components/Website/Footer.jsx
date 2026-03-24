@@ -24,7 +24,7 @@ const Footer = () => {
                     {/* Branding */}
                     <div className="flex flex-col gap-6">
                         <Link to="/" className="flex group items-center justify-center gap-3 w-max">
-                            <img src="/new_logo.png" alt="AAYANSH 360 new_logo" className="w-25" />
+                            <img src="/LOGO_FULL.jpeg" alt="AAYANSH 360 new_logo" className="w-25 rounded-full" />
                             <div className='flex flex-col gap-0.5'>
                                 <span className="text-sm font-bold text-white tracking-wide">AAYANSH 360</span>
                                 <span className="text-[10px] uppercase tracking-[2px] text-[#fa5900] font-semibold">SERVICES</span>
@@ -77,7 +77,7 @@ const Footer = () => {
                 </div>
 
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/50">
-                    <p>&copy; 2026 Digicoders Technology Pvt. Ltd. </p>
+                    <p>&copy; 2026 <a className='text-blue-300' target='_blank' href="https://digicoders.in/">#TeamDigiCoders</a> </p>
                     <div className="flex gap-6">
                         <Link to="/privacy-policy" className="hover:text-[#fa5900] transition-colors">Privacy Policy</Link>
                         <Link to="/terms-and-conditions" className="hover:text-[#fa5900] transition-colors">Terms & Conditions</Link>

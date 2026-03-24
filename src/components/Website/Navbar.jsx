@@ -67,12 +67,12 @@ const Navbar = () => {
                     <div className="max-w-[1200px] mx-auto px-5 flex justify-between items-center">
                         {/* Logo */}
                         <Link to="/" className="flex group items-center gap-3">
-                            <img src="/new_logo.png" alt="Logo" className="h-18 w-auto" />
+                            <img src="/logo_main.jpeg" alt="Logo" className="h-25 w-auto" />
                             <div className='flex flex-col gap-0.5'>
                                 <span className="text-sm font-bold text-gray-900 tracking-wide">AAYANSH 360</span>
                                 <span className="text-[10px] uppercase tracking-[2px] text-[#fa5900] font-semibold">SERVICES</span>
                                 {/* <span className="text-[5px] uppercase tracking-[2px] text-black font-semibold">Complete Building Care Solutions</span> */}
-                                <span className="text-[7px] uppercase tracking-[2px] text-gray-500 font-semibold">Waterproofing 🟠 Painting 🟠 Construction </span>
+                                {/* <span className="text-[7px] uppercase tracking-[2px] text-gray-500 font-semibold">Waterproofing 🟠 Painting 🟠 Construction </span> */}
                             </div>
                         </Link>
 
