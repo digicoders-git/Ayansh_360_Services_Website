@@ -29,7 +29,7 @@ const About = () => {
                     <div className="flex flex-col gap-8 px-5">
                         <h2 className="text-3xl md:text-4xl">WE ARE COMMITTED TO <span className="text-primary">QUALITY</span> CONSTRUCTION</h2>
                         <p className="text-text-muted leading-relaxed">
-                            Founded in 2008, Buildarx has grown from a small local painting firm into a comprehensive construction and waterproofing service provider. Our mission is to transform spaces with precision and care, ensuring every project meets the highest standards of durability and aesthetic appeal.
+                            Founded in 2008, Aayansh 360 has grown from a small local painting firm into a comprehensive construction and waterproofing service provider. Our mission is to transform spaces with precision and care, ensuring every project meets the highest standards of durability and aesthetic appeal.
                         </p>
                         <p className="text-text-muted leading-relaxed">
                             We specialize in residential renovations, commercial painting, and advanced waterproofing solutions. Our team of certified professionals is dedicated to providing innovative solutions that stand the test of time.

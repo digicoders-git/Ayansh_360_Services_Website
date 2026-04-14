@@ -80,7 +80,7 @@ const Contact = () => {
                         <div>
                             <h2 className="text-4xl font-bold text-black mb-6">Get In Touch</h2>
                             <p className="text-gray-500 leading-relaxed max-w-lg">
-                                The perfect way to enjoy brewing tea on low hanging fruitidentify. Duis autem vel eum iriurea generat dolor inner hendrmodeerit ulputate velit esse m olestie consequatvel illum dolore eu feugiat nulla facilisis.
+                                We are here to help you with all your construction, painting, and waterproofing needs. Feel free to reach out to us and our team will get back to you as soon as possible.
                             </p>
                         </div>
 
@@ -131,7 +131,7 @@ const Contact = () => {
                     {/* Right Side - Form */}
                     <div className="bg-white md:p-14 p-8 rounded-3xl border border-gray-200 shadow-xl shadow-gray-200/50">
                         <h2 className="text-3xl font-bold text-black mb-4">Send Us Message</h2>
-                        <p className="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">Seorem Ipsum is simply dummy text of the printing and typesetting.</p>
+                        <p className="text-gray-400 text-sm mb-10 leading-relaxed max-w-sm">Fill in the form below and our team will respond to your query within 24 hours.</p>
 
                         {submitMessage && (
                             <div className={`mb-6 p-4 rounded-lg ${submitMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
@@ -204,7 +204,7 @@ const Contact = () => {
 
                         {/* Address Card Overlay */}
                         <div className="absolute top-10 left-10 bg-white p-8 rounded-xl shadow-xl max-w-sm hidden md:block">
-                            <h4 className="text-xl font-bold mb-2">Buildarx</h4>
+                            <h4 className="text-xl font-bold mb-2">Aayansh 360</h4>
                             <p className="text-gray-500 text-sm leading-relaxed mb-4">
                                 {contactInfo?.address}
                             </p>

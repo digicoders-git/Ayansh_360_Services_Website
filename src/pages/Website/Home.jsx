@@ -183,7 +183,7 @@ const Home = () => {
                             <div>
                                 <h3 className="text-xl font-bold text-black mb-3 uppercase tracking-tight">Project Planning</h3>
                                 <p className="text-gray-500 text-sm leading-relaxed">
-                                    We specialize in the maintenance of metalworking equipment and engineers have worked.
+                                    We begin by understanding your requirements, budget, and timeline. Our experts create a detailed project plan to ensure smooth execution from start to finish.
                                 </p>
                             </div>
                             {/* Arrow for desktop */}
@@ -207,7 +207,7 @@ const Home = () => {
                             <div>
                                 <h3 className="text-xl font-bold text-black mb-3 uppercase tracking-tight">Development</h3>
                                 <p className="text-gray-500 text-sm leading-relaxed">
-                                    We specialize in the maintenance of metalworking equipment and engineers have worked.
+                                    Our skilled team executes the project with precision using quality materials and proven techniques, keeping you updated at every stage of the work.
                                 </p>
                             </div>
                             {/* Arrow for desktop */}
@@ -231,7 +231,7 @@ const Home = () => {
                             <div>
                                 <h3 className="text-xl font-bold text-black mb-3 uppercase tracking-tight">Success</h3>
                                 <p className="text-gray-500 text-sm leading-relaxed">
-                                    We specialize in the maintenance of metalworking equipment and engineers have worked.
+                                    We deliver the completed project on time, conduct a thorough quality check, and ensure your complete satisfaction before handing over the work.
                                 </p>
                             </div>
                         </div>
@@ -282,7 +282,7 @@ const Home = () => {
                                 Highlighted Our Project <br /> <span className="text-primary">Excellence</span> Building
                             </h2>
                             <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-10 max-w-md">
-                                We specialize in the maintenance of workering equipment and engineers have worked. We specialize in equipment and consulting.
+                                We specialize in delivering high-quality construction and renovation projects. Our experienced engineers ensure every project is completed with precision and excellence.
                             </p>
                         
                         </div>
@@ -504,7 +504,7 @@ const Home = () => {
                                             ))}
                                         </div>
                                         <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
-                                            "Great Quality Products With areaw Good Packaging unknown printer toweok year galley of type and scrambled itter area make pecimive centuries"
+                                            "Aayansh 360 delivered exceptional results on our renovation project. Their team was professional, punctual, and the quality of work exceeded our expectations. Highly recommended!"
                                         </p>
                                         <div className="flex items-center gap-4">
                                             <img
@@ -513,8 +513,8 @@ const Home = () => {
                                                 className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
                                             />
                                             <div>
-                                                <h4 className="text-black font-bold text-lg font-outfit">Makjer Moken</h4>
-                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at Buildanx</span>
+                                                <h4 className="text-black font-bold text-lg font-outfit">Rajesh Kumar</h4>
+                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at BuildCorp</span>
                                             </div>
                                         </div>
                                     </div>
@@ -530,7 +530,7 @@ const Home = () => {
                                             ))}
                                         </div>
                                         <p className="text-gray-600 text-lg italic mb-10 leading-relaxed font-inter">
-                                            "Great Quality Products With areaw Good Packaging unknown printer toweok year galley of type and scrambled itter area make pecimive centuries"
+                                            "The waterproofing work done by Aayansh 360 was outstanding. No more leakage issues after years of struggle. Their expertise and dedication to quality is truly commendable."
                                         </p>
                                         <div className="flex items-center gap-4">
                                             <img
@@ -539,8 +539,8 @@ const Home = () => {
                                                 className="w-16 h-16 rounded-full object-cover grayscale hover:grayscale-0 transition-all border-2 border-primary"
                                             />
                                             <div>
-                                                <h4 className="text-black font-bold text-lg font-outfit">Makjer Moken</h4>
-                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">Director at Buildanx</span>
+                                                <h4 className="text-black font-bold text-lg font-outfit">Priya Sharma</h4>
+                                                <span className="text-primary text-sm font-bold uppercase tracking-wider">Homeowner, Lucknow</span>
                                             </div>
                                         </div>
                                     </div>
